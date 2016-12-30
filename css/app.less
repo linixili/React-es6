@@ -1,0 +1,154 @@
+/*根据loader元素渲染css3动画*/
+.loader{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -5em;
+	height: 11em;
+	width: 11em;
+	transform: rotate(45deg);
+	&:after,
+	&:before{
+		content: '';
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		border-radius: .5em;
+		width: 1em;
+		height: 1em;
+		transform: translate(-50%, -50%);
+	}
+	&:after {
+		animation: loader-after 3s infinite;
+	}
+	&:before {
+		animation: loader-before 3s infinite;
+	}
+}
+.loader-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	margin-left: -200px;
+	margin-top: -6em; 
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+}
+.header {
+	height: 50px;
+	input {
+		margin-top: 12px;
+	}
+	img {
+		cursor: pointer;
+	}
+	li {
+		line-height: 40px;
+		a {
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		a,
+		a:hover {
+			background: none !important;
+		}
+	}
+
+}
+.banner {
+	background-image: url(../img/banner/banner0.jpg);
+	background-position: center top;
+	background-size: 100%;
+	height: 500px;
+}
+.main {
+	width: 1200px;
+	margin: 30px auto;
+	ul,
+	li {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+	ul {
+		margin-left: -15px;
+		li {
+			width: 288.75px;
+			margin-right: 15px;
+			height: 200px;
+			float: left;
+			position: relative;
+			margin-bottom: 20px;
+		}
+		a,
+		a:hover {
+			color: #fff;
+			text-decoration: none;
+			display: block;
+		}
+		.content {
+			height: 200px;
+			width: 288.75px;
+			display: table-cell;
+			vertical-align: middle;
+			h1 {
+				margin: 0;
+				text-align: center;
+				margin: 0 20px;
+			}
+		}
+		.layer {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding: 40px 20px;
+			background: rgba(0, 0, 0, .8);
+			display: none;
+		}
+		a:hover .layer {
+			display: block;
+		}
+	}
+}
+/*定义动画*/
+@keyframes loader-after {
+	0% {
+		width: 1em;
+		box-shadow: -5em 3em #f4a7c4, 5em -3em #c9f0fc;
+	}
+	35% {
+		width: 11em;
+		box-shadow: 0 3em #f4a7c4, 0 -3em #c9f0fc;
+	}
+	70% {
+		width: 1em;
+		box-shadow: 5em 3em #f4a7c4, -5em -3em #c9f0fc;
+	}
+	100% {
+		width: 1em;
+		box-shadow: -5em 3em #f4a7c4, 5em -3em #c9f0fc;
+	}
+}
+@keyframes loader-before {
+	0% {
+		height: 1em;
+		box-shadow: 3em 5em #b3e5d5, -3em -5em #f7dfac;
+	}
+	35% {
+		height: 11em;
+		box-shadow: 3em 0 #b3e5d5, -3em 0 #f7dfac;
+	}
+	70% {
+		height: 1em;
+		box-shadow: 3em -5em #b3e5d5, -3em 5em #f7dfac;
+	}
+	100% {
+		height: 1em;
+		box-shadow: 3em 5em #b3e5d5, -3em -5em #f7dfac;
+	}
+}
